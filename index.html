@@ -3,40 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sensibilizzazione sulle Terre Rare</title>
-    <link href="https://fonts.cdnfonts.com/css/product-sans" rel="stylesheet">  
-    <link rel="stylesheet" href="style.css">
+    <title>Gli Eroi Dimenticati: Le Terre Rare Pesanti</title>
+    
+    <link href="https://fonts.cdnfonts.com/css/product-sans" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
+
     <div class="menu-overlay"></div>
-    
-    <nav class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu" id="mobileMenu" role="navigation" aria-hidden="true">
         <div class="mobile-menu-header">
             <h3>Menu</h3>
-            <button class="close-menu-btn" id="closeMenuBtn">×</button>
+            <button class="close-menu-btn" id="closeMenuBtn" aria-label="Chiudi menu">×</button>
         </div>
         <div class="mobile-menu-links">
-            <a href="index.html" class="active">Home</a>
+            <a href="index.html">Home</a>
+            <a href="index-elementi-non-trattati.html" class="active">Altri Elementi</a>
             <a href="crediti.html">Crediti</a>
-            <a href="materiali.html">Materiali e fonti video</a>
+            <a href="materiali.html">Materiali</a>
         </div>
     </nav>
     
-    <header>
+    <header data-aos="fade-down">
         <div id="header-container">
             <div class="header-title-section">
-                <a href="index.html"><img src="logo.png" class="header-logo" alt="Logo Terre Rare"></a>
+                <a href="index.html"><img src="logo.png" class="header-logo" alt="Logo"></a>
                 <div class="header-text">
                     <h2>Terre Rare</h2>
-                    <h4>Campagna di Sensibilizzazione</h4>
+                    <h4>Elementi & Applicazioni Speciali</h4>
                 </div>
             </div>
             
             <nav id="sezioni-container">
                 <a href="index.html"><h5>Home</h5></a>
+                <a href="index-elementi-non-trattati.html" class="active"><h5>Altri Elementi</h5></a>
                 <a href="crediti.html"><h5>Crediti</h5></a>
-                <a href="materiali.html"><h5>Materiali e fonti video</h5></a>
+                <a href="materiali.html"><h5>Fonti</h5></a>
             </nav>
             
             <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
@@ -44,336 +50,164 @@
     </header>
     
     <main>
-        <section class="hero-section">
-            <div class="hero-content">
-                <h1>Le <span class="highlight">Terre Rare</span>: Elementi Preziosi per il Futuro</h1>
-                <p class="hero-subtitle">Scopri l'importanza, l'impatto ambientale e le sfide globali legate a questi elementi critici per la tecnologia moderna.</p>
-                <div class="hero-buttons">
-                    <a href="#importanza" class="btn-primary">Scopri di più</a>
-                    <a href="#problemi" class="btn-secondary">Problemi attuali</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="element-grid">
-                    <div class="element-card">
-                        <img src="scandio.jpg" class="element-img" alt="Scandio">
-                        <div class="element-name">Scandio</div>
-                    </div>
-                    <div class="element-card">
-                        <img src="https://images.unsplash.com/photo-1517384084767-6bc118943770?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="element-img" alt="Ittrio">
-                        <div class="element-name">Ittrio</div>
-                    </div>
-                    <div class="element-card">
-                        <img src="Lanthan_1-cropflipped.jpg" class="element-img" alt="Lantanio">
-                        <div class="element-name">Lantanio</div>
-                    </div>
-                    <div class="element-card">
-                        <img src="Cerium2.jpg" class="element-img" alt="Cerio">
-                        <div class="element-name">Cerio</div>
-                    </div>
-                    <div class="element-card">
-                        <img src="Praseodymium.jpg" class="element-img" alt="Praseodimio">
-                        <div class="element-name">Praseodimio</div>
-                    </div>
-                    <div class="element-card">
-                        <img src="Neodymium2.jpg" class="element-img" alt="Neodimio">
-                        <div class="element-name">Neodimio</div>
-                    </div>
-                </div>
-            </div>
+        
+        <section id="intro" data-aos="zoom-in">
+            <h1>Gli Eroi Dimenticati: Le Terre Rare "Speciali" ✨</h1>
+            <p>Mentre tutti parlano di Neodimio, noi scopriamo i <strong>sette elementi rimanenti</strong>: gli eroi silenziosi che rendono possibile la medicina di precisione, i motori a reazione e il colore rosso dei nostri schermi.</p>
+            <a href="#dettagli" class="btn-primary">Scopri i Lantanoidi Speciali</a>
         </section>
         
-        <section id="importanza" class="content-section">
-            <h2 class="section-title">Cosa sono le Terre Rare?</h2>
-            <div class="section-content">
-                <div class="text-content">
-                    <p>Le terre rare sono un gruppo di <strong>17 elementi chimici</strong> della tavola periodica, comprendenti i 15 lantanoidi più lo scandio e l'ittrio.</p>
-                    <p>Nonostante il nome, questi elementi non sono particolarmente rari in natura, ma sono difficili da estrarre e separare economicamente.</p>
-                    
-                    <div class="key-points">
-                        <div class="key-point">
-                            <div class="point-icon"><i class="fas fa-battery-full"></i></div>
-                            <h3>Energia verde</h3>
-                            <p>Essenziali per magneti permanenti in turbine eoliche e motori per veicoli elettrici</p>
-                        </div>
-                        <div class="key-point">
-                            <div class="point-icon"><i class="fas fa-mobile-alt"></i></div>
-                            <h3>Tecnologia</h3>
-                            <p>Componenti fondamentali per smartphone, schermi, hard disk e fibre ottiche</p>
-                        </div>
-                        <div class="key-point">
-                            <div class="point-icon"><i class="fas fa-heartbeat"></i></div>
-                            <h3>Medicina</h3>
-                            <p>Utilizzati in apparecchiature per risonanza magnetica e trattamenti contro il cancro</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="image-content">
-                    <div class="image-frame">
-                        <img src="miniera-terre-rare-1673870583196-1200x675.avif" alt="Estrazione di terre rare" class="section-img">
-                        <div class="image-caption">Miniera di terre rare in Svezia</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <hr>
         
-        <section class="content-section dark-section">
-            <h2 class="section-title">Gli Elementi delle Terre Rare</h2>
-            <div class="periodic-table-intro">
-                <p>I 17 elementi delle terre rare sono divisi in due gruppi principali:</p>
-            </div>
-            <div class="periodic-table-container">
-                <div class="rare-earth-group">
-                    <h3><i class="fas fa-atom"></i> Terre Rare Leggere (LREE)</h3>
-                    <div class="elements-list">
-                        <div class="element-item">
-                            <img src="Lanthan_1-cropflipped.jpg" alt="Lantanio" class="element-img">
-                            <div class="element-info">
-                                <h4>Lantanio (La)</h4>
-                                <p>Usato in lenti per fotocamere e catalizzatori</p>
-                            </div>
-                        </div>
-                        <div class="element-item">
-                            <img src="Cerium2.jpg" alt="Cerio" class="element-img">
-                            <div class="element-info">
-                                <h4>Cerio (Ce)</h4>
-                                <p>Componente di convertitori catalitici e lucidanti</p>
-                            </div>
-                        </div>
-                        <div class="element-item">
-                            <img src="Neodymium2.jpg" alt="Neodimio" class="element-img">
-                            <div class="element-info">
-                                <h4>Neodimio (Nd)</h4>
-                                <p>Magnetismo ad alta potenza per motori e turbine</p>
-                            </div>
-                        </div>
-                        <div class="element-item">
-                            <img src="scandio.jpg" alt="Scandio" class="element-img">
-                            <div class="element-info">
-                                <h4>Scandio (Sc)</h4>
-                                <p>Leghe leggere e illuminazione</p>
-                            </div>
-                        </div>
-                        <div class="element-item">
-                            <img src="Praseodymium.jpg" alt="Praseodimio" class="element-img">
-                            <div class="element-info">
-                                <h4>Praseodimio (Pr)</h4>
-                                <p>Pigmenti e magneti permanenti</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="rare-earth-group">
-                    <h3><i class="fas fa-magnet"></i> Terre Rare Pesanti (HREE)</h3>
-                    <div class="elements-list">
-                        <div class="element-item">
-                            <img src="https://images.unsplash.com/photo-1517384084767-6bc118943770?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Ittrio" class="element-img">
-                            <div class="element-info">
-                                <h4>Ittrio (Y)</h4>
-                                <p>LED, superconduttori e trattamenti per il cancro</p>
-                            </div>
-                        </div>
-                        <div class="element-item">
-                            <img src="Terbium-2.jpg" alt="Terbio" class="element-img">
-                            <div class="element-info">
-                                <h4>Terbio (Tb)</h4>
-                                <p>Fosfori verdi per schermi a tubo catodico</p>
-                            </div>
-                        </div>
-                        <div class="element-item">
-                            <img src="Dy_chips.jpg" alt="Disprosio" class="element-img">
-                            <div class="element-info">
-                                <h4>Disprosio (Dy)</h4>
-                                <p>Magnetostrizione e laser ad alta potenza</p>
-                            </div>
-                        </div>
-                        <div class="element-item">
-                            <img src="Holmium2.jpg" alt="Olmio" class="element-img">
-                            <div class="element-info">
-                                <h4>Olmio (Ho)</h4>
-                                <p>Laser medicali e coloranti</p>
-                            </div>
-                        </div>
-                        <div class="element-item">
-                            <img src="images.jpg" alt="Erbio" class="element-img">
-                            <div class="element-info">
-                                <h4>Erbio (Er)</h4>
-                                <p>Fibre ottiche e amplificatori laser</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="problemi" class="content-section">
-            <h2 class="section-title">Le Sfide e i Problemi</h2>
-            <div class="problems-grid">
-                <div class="problem-card">
-                    <img src="https://images.unsplash.com/photo-1589652717521-10c0d092dea9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="problem-img" alt="Impatto Ambientale">
-                    <h3>Impatto Ambientale</h3>
-                    <p>L'estrazione e la raffinazione delle terre rare generano scorie radioattive e inquinamento chimico, con danni significativi agli ecosistemi locali.</p>
-                    <ul class="problem-list">
-                        <li><i class="fas fa-tint"></i> Acque contaminate da metalli pesanti</li>
-                        <li><i class="fas fa-smog"></i> Emissioni di gas fluorurati</li>
-                        <li><i class="fas fa-mountain"></i> Distruzione del paesaggio</li>
-                    </ul>
-                </div>
-                <div class="problem-card">
-                    <img src="https://images.unsplash.com/photo-1554260570-9140fd3b7614?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="problem-img" alt="Monopolio Cinese">
-                    <h3>Monopolio Cinese</h3>
-                    <p>La Cina controlla oltre l'80% della produzione globale, creando dipendenza strategica e vulnerabilità per le economie occidentali.</p>
-                    <ul class="problem-list">
-                        <li><i class="fas fa-chart-line"></i> Controllo sui prezzi globali</li>
-                        <li><i class="fas fa-ban"></i> Vincoli alle esportazioni</li>
-                        <li><i class="fas fa-exclamation-triangle"></i> Rischio di interruzione delle forniture</li>
-                    </ul>
-                </div>
-                <div class="problem-card">
-                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="problem-img" alt="Scarsità di Riciclo">
-                    <h3>Scarsità di Riciclo</h3>
-                    <p>Meno dell'1% delle terre rare viene riciclato dai prodotti a fine vita, causando enormi sprechi di risorse preziose.</p>
-                    <ul class="problem-list">
-                        <li><i class="fas fa-filter"></i> Difficoltà di separazione</li>
-                        <li><i class="fas fa-euro-sign"></i> Costi di recupero elevati</li>
-                        <li><i class="fas fa-tools"></i> Design non ottimizzato per il riciclo</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        
-        <section class="content-section dark-section">
-            <h2 class="section-title">Applicazioni delle Terre Rare</h2>
-            <div class="applications-gallery">
-                <div class="application-item">
-                    <div class="app-img-container">
-                        <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="app-img" alt="Elettronica">
-                        <div class="app-overlay">
-                            <h4>Elettronica</h4>
-                            <p>Smartphone, tablet e computer</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="application-item">
-                    <div class="app-img-container">
-                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="app-img" alt="Energia Verde">
-                        <div class="app-overlay">
-                            <h4>Energia Verde</h4>
-                            <p>Turbine eoliche e veicoli elettrici</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="application-item">
-                    <div class="app-img-container">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="app-img" alt="Medicina">
-                        <div class="app-overlay">
-                            <h4>Medicina</h4>
-                            <p>Risonanza magnetica e radioterapia</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="application-item">
-                    <div class="app-img-container">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="app-img" alt="Difesa">
-                        <div class="app-overlay">
-                            <h4>Difesa</h4>
-                            <p>Sistemi di guida e comunicazione</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="content-section">
-            <h2 class="section-title">Cosa Possiamo Fare?</h2>
-            <div class="solutions-container">
-                <div class="solution-step">
-                    <div class="step-icon"><i class="fas fa-lightbulb"></i></div>
-                    <div class="step-content">
-                        <h3>Consapevolezza</h3>
-                        <p>Informarsi sull'origine dei prodotti tecnologici che acquistiamo e sul loro impatto ambientale.</p>
-                    </div>
-                </div>
-                <div class="solution-step">
-                    <div class="step-icon"><i class="fas fa-recycle"></i></div>
-                    <div class="step-content">
-                        <h3>Economia Circolare</h3>
-                        <p>Sostenere iniziative di riciclo dei dispositivi elettronici e promuovere il riutilizzo delle risorse.</p>
-                    </div>
-                </div>
-                <div class="solution-step">
-                    <div class="step-icon"><i class="fas fa-vote-yea"></i></div>
-                    <div class="step-content">
-                        <h3>Pressione Politica</h3>
-                        <p>Chiedere ai governi di investire in ricerca per metodi di estrazione più puliti e diversificare le fonti di approvvigionamento.</p>
-                    </div>
-                </div>
-            </div>
+        <section id="dettagli">
+            <h2 class="section-title" data-aos="fade-up">I Sette Speciali: Proprietà e Usi</h2>
             
-            <div class="call-to-action">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="cta-img" alt="Unisciti alla Campagna">
-                <div class="cta-content">
-                    <h3>Condividi anche tu!</h3>
-                    <p>Consulta i nostri materiali didattici e condividi le informazioni con la tua comunità.</p>
-                    <a href="materiali.html" class="btn-primary">Esplora i materiali</a>
+            <div id="element-cards">
+                
+                <div class="element-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="element-header">
+                        <h3>Prometio</h3>
+                        <div class="element-symbol">Pm</div>
+                    </div>
+                    <ul class="element-detail-list">
+                        <li><span class="detail-title"><i class="fa-solid fa-radiation"></i> Descrizione:</span> <span class="detail-text">Unico lantanide radioattivo e artificiale.</span></li>
+                        <li><span class="detail-title"><i class="fa-solid fa-bolt"></i> Usi Chiave:</span> <span class="detail-text">Micro-batterie nucleari per veicoli spaziali e pacemaker.</span></li>
+                        <li><span class="detail-title"><i class="fa-solid fa-lightbulb"></i> Curiosità:</span> <span class="detail-text">Prende il nome da Prometeo, che rubò il fuoco agli dei.</span></li>
+                    </ul>
                 </div>
+                
+                <div class="element-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="element-header">
+                        <h3>Samario</h3>
+                        <div class="element-symbol">Sm</div>
+                    </div>
+                    <ul class="element-detail-list">
+                        <li><span class="detail-title"><i class="fa-solid fa-atom"></i> Descrizione:</span> <span class="detail-text">Resistente alla smagnetizzazione ad alte temperature.</span></li>
+                        <li><span class="detail-title"><i class="fa-solid fa-rocket"></i> Usi Chiave:</span> <span class="detail-text">Magneti per motori aerospaziali (Samario-Cobalto).</span></li>
+                        <li><span class="detail-title"><i class="fa-solid fa-fire"></i> Curiosità:</span> <span class="detail-text">I suoi magneti funzionano oltre i 300°C, battendo il Neodimio.</span></li>
+                    </ul>
+                </div>
+
+                <div class="element-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="element-header">
+                        <h3>Europio</h3>
+                        <div class="element-symbol">Eu</div>
+                    </div>
+                    <ul class="element-detail-list">
+                        <li><span class="detail-title"><i class="fa-solid fa-palette"></i> Descrizione:</span> <span class="detail-text">Il re della fluorescenza rossa.</span></li>
+                        <li><span class="detail-title"><i class="fa-solid fa-tv"></i> Usi Chiave:</span> <span class="detail-text">Schermi LED e luci anti-contraffazione (banconote).</span></li>
+                        <li><span class="detail-title"><i class="fa-solid fa-droplet"></i> Curiosità:</span> <span class="detail-text">Senza Europio non avremmo colori realistici in TV.</span></li>
+                    </ul>
+                </div>
+                
+                <div class="element-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="element-header">
+                        <h3>Gadolinio</h3>
+                        <div class="element-symbol">Gd</div>
+                    </div>
+                    <ul class="element-detail-list">
+                        <li><span class="detail-title"><i class="fa-solid fa-stethoscope"></i> Descrizione:</span> <span class="detail-text">Fortemente magnetico a temperatura ambiente.</span></li>
+                        <li><span class="detail-title"><i class="fa-solid fa-brain"></i> Usi Chiave:</span> <span class="detail-text">Mezzo di contrasto vitale per la Risonanza Magnetica (RM).</span></li>
+                        <li><span class="detail-title"><i class="fa-solid fa-thermometer"></i> Curiosità:</span> <span class="detail-text">Usato per la refrigerazione magnetica (frigo del futuro).</span></li>
+                    </ul>
+                </div>
+
+                <div class="element-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="element-header">
+                        <h3>Tulio</h3>
+                        <div class="element-symbol">Tm</div>
+                    </div>
+                    <ul class="element-detail-list">
+                        <li><span class="detail-title"><i class="fa-solid fa-microscope"></i> Descrizione:</span> <span class="detail-text">Uno dei più rari e costosi.</span></li>
+                        <li><span class="detail-title"><i class="fa-solid fa-scissors"></i> Usi Chiave:</span> <span class="detail-text">Laser chirurgici precisi (urologia, occhi).</span></li>
+                        <li><span class="detail-title"><i class="fa-solid fa-flag"></i> Curiosità:</span> <span class="detail-text">Nome derivato da "Thule", la mitica terra del Nord.</span></li>
+                    </ul>
+                </div>
+                
+                <div class="element-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="element-header">
+                        <h3>Itterbio</h3>
+                        <div class="element-symbol">Yb</div>
+                    </div>
+                    <ul class="element-detail-list">
+                        <li><span class="detail-title"><i class="fa-solid fa-signal"></i> Descrizione:</span> <span class="detail-text">Proprietà ottiche per amplificare segnali.</span></li>
+                        <li><span class="detail-title"><i class="fa-solid fa-satellite-dish"></i> Usi Chiave:</span> <span class="detail-text">Fibre ottiche per internet super-veloce e laser industriali.</span></li>
+                        <li><span class="detail-title"><i class="fa-solid fa-code"></i> Curiosità:</span> <span class="detail-text">Migliora la stabilità degli orologi atomici.</span></li>
+                    </ul>
+                </div>
+
+                <div class="element-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="element-header">
+                        <h3>Lutezio</h3>
+                        <div class="element-symbol">Lu</div>
+                    </div>
+                    <ul class="element-detail-list">
+                        <li><span class="detail-title"><i class="fa-solid fa-weight-scale"></i> Descrizione:</span> <span class="detail-text">Il più denso e duro dei lantanidi.</span></li>
+                        <li><span class="detail-title"><i class="fa-solid fa-x-ray"></i> Usi Chiave:</span> <span class="detail-text">Rilevatori per la scansione PET (diagnostica tumori).</span></li>
+                        <li><span class="detail-title"><i class="fa-solid fa-city"></i> Curiosità:</span> <span class="detail-text">Il suo nome è l'antico nome latino di Parigi (Lutèce).</span></li>
+                    </ul>
+                </div>
+                
             </div>
         </section>
         
-        <section class="content-section dark-section">
-            <h2 class="section-title">Fatti Sorprendenti</h2>
-            <div class="facts-container">
-                <div class="fact-item">
-                    <div class="fact-icon"><i class="fas fa-magnet"></i></div>
-                    <div class="fact-number">90%</div>
-                    <div class="fact-text">dei magneti permanenti ad alta potenza contengono terre rare</div>
+        <hr>
+        
+        <section id="interactive-section" data-aos="flip-up">
+            <h2 class="section-title"><i class="fa-solid fa-gamepad"></i> Quiz: Mettiti alla Prova</h2>
+            <p style="color:var(--text-muted);">Abbina l'elemento al suo potere speciale!</p>
+
+            <div id="quiz-container">
+                <div id="question">Caricamento domanda...</div>
+                <div id="answers-container">
+                    <button class="answer-btn"></button>
+                    <button class="answer-btn"></button>
+                    <button class="answer-btn"></button>
                 </div>
-                <div class="fact-item">
-                    <div class="fact-icon"><i class="fas fa-car"></i></div>
-                    <div class="fact-number">10-15 kg</div>
-                    <div class="fact-text">di terre rare in ogni automobile ibrida o elettrica</div>
-                </div>
-                <div class="fact-item">
-                    <div class="fact-icon"><i class="fas fa-radiation"></i></div>
-                    <div class="fact-number">200 kg</div>
-                    <div class="fact-text">di scorie radioattive per ogni kg di terre rare estratte</div>
-                </div>
-                <div class="fact-item">
-                    <div class="fact-icon"><i class="fas fa-chart-line"></i></div>
-                    <div class="fact-number">7x</div>
-                    <div class="fact-text">aumento della domanda previsto entro il 2040</div>
-                </div>
+                <div id="quiz-feedback"></div>
+                <button id="next-btn" disabled>Prossima Domanda</button>
             </div>
         </section>
+        
+        <hr>
+        
+        <section id="conclusion" style="max-width:800px; margin:0 auto; padding:20px; text-align:center;" data-aos="fade-up">
+            <h2 class="section-title"><i class="fa-solid fa-handshake"></i> Il Futuro è nelle Terre Rare</h2>
+            <p><strong>In sintesi:</strong> Le Terre Rare sono il carburante dell'alta tecnologia. Dall'<strong>Europio</strong> che colora il mondo, al <strong>Gadolinio</strong> che salva vite in ospedale.</p>
+            <p>La sfida del futuro non è solo usarle, ma riciclarle in modo sostenibile.</p>
+        </section>
+        
     </main>
     
     <footer>
         <div class="footer-content">
             <div class="footer-section">
                 <div class="footer-logo">
-                    <img src="logo.png" alt="Logo Terre Rare" class="footer-logo-img">
+                    <img src="logo.png" alt="Logo" class="footer-logo-img">
                     <h4>Terre Rare</h4>
                 </div>
-                <p>Campagna di sensibilizzazione sull'importanza e le sfide delle terre rare nella società moderna.</p>
+                <p>Progetto scolastico sull'importanza strategica dei lantanoidi.</p>
             </div>
             <div class="footer-section">
-            </div>
-            <div class="footer-section">
-                <h4>Elementi delle Terre Rare</h4>
+                <h4>Il Gruppo Completo</h4>
                 <div class="footer-elements">
-                    <span class="element-tag">Scandio</span>
-                    <span class="element-tag">Ittrio</span>
-                    <span class="element-tag">Lantanio</span>
-                    <span class="element-tag">Cerio</span>
-                    <span class="element-tag">Neodimio</span>
-                    <span class="element-tag">Terbio</span>
+                    <span class="element-tag">Prometio</span>
+                    <span class="element-tag">Samario</span>
+                    <span class="element-tag">Europio</span>
+                    <span class="element-tag">Gadolinio</span>
+                    <span class="element-tag">Tulio</span>
+                    <span class="element-tag">Itterbio</span>
+                    <span class="element-tag">Lutezio</span>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 IIS Silvio Ceccato - All rights Reserved</p>
+            <p>&copy; 2025 IIS Silvio Ceccato - Presentazione Chimica</p>
         </div>
     </footer>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
     
     <script src="script.js"></script>
 </body>

@@ -1,152 +1,168 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const closeMenuBtn = document.getElementById('closeMenuBtn');
-    const menuOverlay = document.querySelector('.menu-overlay');
-    
-    mobileMenuBtn.addEventListener('click', function() {
-        mobileMenu.classList.add('active');
-        menuOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    });
-    
-    function closeMobileMenu() {
-        mobileMenu.classList.remove('active');
-        menuOverlay.classList.remove('active');
-        document.body.style.overflow = '';
+/* --- 1. CONFIGURAZIONE LIBRERIE GRAFICHE (WOW EFFECT) --- */
+
+// Inizializza le animazioni allo scroll (AOS)
+document.addEventListener('DOMContentLoaded', () => {
+    // Inizializza AOS se caricato
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,  // Durata animazione in millisecondi
+            offset: 100,    // Distanza dal bordo per attivare
+            once: true      // Anima solo la prima volta
+        });
     }
-    
-    closeMenuBtn.addEventListener('click', closeMobileMenu);
-    menuOverlay.addEventListener('click', closeMobileMenu);
-    
-    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-links a');
-    mobileMenuLinks.forEach(link => {
-        link.addEventListener('click', closeMobileMenu);
-    });
-    
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            
-            if (href.startsWith('#') && href.length > 1) {
-                e.preventDefault();
-                
-                const targetId = href.substring(1);
-                const targetElement = document.getElementById(targetId);
-                
-                if (targetElement) {
-                    if (mobileMenu.classList.contains('active')) {
-                        closeMobileMenu();
-                    }
-                    
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            }
+
+    // Inizializza effetto 3D sulle carte (Vanilla Tilt)
+    if (typeof VanillaTilt !== 'undefined') {
+        VanillaTilt.init(document.querySelectorAll(".element-card"), {
+            max: 10,        // Inclinazione massima
+            speed: 400,     // Velocità risposta
+            glare: true,    // Effetto riflesso
+            "max-glare": 0.2,
+            scale: 1.02     // Leggero zoom
         });
-    });
-    
-    const applicationItems = document.querySelectorAll('.application-item');
-    applicationItems.forEach(item => {
-        item.addEventListener('mouseenter', function() {
-            const overlay = this.querySelector('.app-overlay');
-            if (overlay) {
-                overlay.style.transform = 'translateY(0)';
-            }
-        });
-        
-        item.addEventListener('mouseleave', function() {
-            const overlay = this.querySelector('.app-overlay');
-            if (overlay) {
-                overlay.style.transform = 'translateY(100%)';
-            }
-        });
-    });
-    
-    const elementCards = document.querySelectorAll('.element-card');
-    elementCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px)';
-            this.style.boxShadow = '0 15px 30px rgba(0, 168, 255, 0.4)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-            this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.2)';
-        });
-    });
-    
-    const problemCards = document.querySelectorAll('.problem-card');
-    const factItems = document.querySelectorAll('.fact-item');
-    const solutionSteps = document.querySelectorAll('.solution-step');
-    
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                
-                if (entry.target.classList.contains('problem-card') || 
-                    entry.target.classList.contains('fact-item') ||
-                    entry.target.classList.contains('solution-step')) {
-                    const delay = Array.from(entry.target.parentNode.children).indexOf(entry.target) * 0.1;
-                    entry.target.style.transitionDelay = `${delay}s`;
-                }
-            }
-        });
-    }, observerOptions);
-    
-    const elementsToAnimate = [...problemCards, ...factItems, ...solutionSteps];
-    elementsToAnimate.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(20px)';
-        element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        observer.observe(element);
-    });
-    
-    const elementItems = document.querySelectorAll('.element-item');
-    elementItems.forEach(item => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateX(-20px)';
-        item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        observer.observe(item);
-    });
-    
-    const copyrightElement = document.querySelector('.footer-bottom p');
-    if (copyrightElement) {
-        const currentYear = new Date().getFullYear();
-        copyrightElement.innerHTML = copyrightElement.innerHTML.replace('2023', currentYear);
     }
-    
-    const images = document.querySelectorAll('img[data-src]');
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.getAttribute('data-src');
-                img.removeAttribute('data-src');
-                observer.unobserve(img);
-            }
-        });
-    });
-    
-    images.forEach(img => imageObserver.observe(img));
-    
-    const sectionImages = document.querySelectorAll('.section-image');
-    sectionImages.forEach(img => {
-        img.parentElement.addEventListener('mouseenter', function() {
-            img.style.transform = 'scale(1.05)';
-        });
-        
-        img.parentElement.addEventListener('mouseleave', function() {
-            img.style.transform = 'scale(1)';
-        });
-    });
 });
+
+
+/* --- 2. MENU MOBILE --- */
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const closeMenuBtn = document.getElementById('closeMenuBtn');
+
+if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.add('open');
+        mobileMenu.setAttribute('aria-hidden', 'false');
+    });
+}
+
+if (closeMenuBtn && mobileMenu) {
+    closeMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+    });
+}
+
+
+/* --- 3. LOGICA QUIZ INTERATTIVO --- */
+const quizData = [
+    {
+        question: "Quale elemento è essenziale per il colore **rosso brillante** negli schermi?",
+        symbol: "Eu",
+        correctAnswerIndex: 0,
+        answers: ["Europio", "Gadolinio", "Samario"]
+    },
+    {
+        question: "Quale elemento è usato come mezzo di **contrasto per la Risonanza Magnetica**?",
+        symbol: "Gd",
+        correctAnswerIndex: 1,
+        answers: ["Lutezio", "Gadolinio", "Tulio"]
+    },
+    {
+        question: "Quale elemento crea magneti che resistono a **temperature oltre 300°C**?",
+        symbol: "Sm",
+        correctAnswerIndex: 2,
+        answers: ["Prometio", "Europio", "Samario"]
+    },
+    {
+        question: "Quale lantanide è l'unico **radioattivo e artificiale**?",
+        symbol: "Pm",
+        correctAnswerIndex: 0,
+        answers: ["Prometio", "Itterbio", "Lutezio"]
+    },
+    {
+        question: "Quale elemento è usato nei laser e **fibre ottiche** per internet veloce?",
+        symbol: "Yb",
+        correctAnswerIndex: 1,
+        answers: ["Tulio", "Itterbio", "Gadolinio"]
+    }
+];
+
+let currentQuizIndex = 0;
+let score = 0;
+let answered = false;
+
+// Elementi DOM del Quiz
+const questionElement = document.getElementById('question');
+const answersContainer = document.getElementById('answers-container');
+const feedbackElement = document.getElementById('quiz-feedback');
+const nextBtn = document.getElementById('next-btn');
+const answerButtons = document.querySelectorAll('.answer-btn');
+
+function loadQuiz() {
+    if (!questionElement) return; // Evita errori se la pagina non ha il quiz
+
+    answered = false;
+    nextBtn.disabled = true;
+    feedbackElement.textContent = '';
+    
+    // Reset pulsanti
+    answerButtons.forEach(btn => {
+        btn.classList.remove('correct', 'incorrect');
+        btn.disabled = false;
+        btn.style.opacity = "1";
+    });
+
+    if (currentQuizIndex < quizData.length) {
+        const currentQuiz = quizData[currentQuizIndex];
+        
+        // Domanda con simbolo
+        questionElement.innerHTML = `<span style="color:var(--colore-primario); margin-right:10px;">(${currentQuiz.symbol})</span> ${currentQuiz.question}`;
+
+        // Carica risposte
+        currentQuiz.answers.forEach((answer, index) => {
+            if(answerButtons[index]) {
+                answerButtons[index].textContent = answer;
+                answerButtons[index].dataset.answerIndex = index;
+            }
+        });
+    } else {
+        // Fine Quiz
+        questionElement.innerHTML = `<span style="color:var(--colore-successo)">Quiz Completato!</span><br>Punteggio: ${score} su ${quizData.length}`;
+        answersContainer.innerHTML = `<p style="text-align:center; font-size:1.1em;">Grazie per aver partecipato!</p>`;
+        nextBtn.style.display = 'none';
+        feedbackElement.style.display = 'none';
+    }
+}
+
+function checkAnswer(selectedIndex) {
+    if (answered) return;
+    
+    answered = true;
+    const currentQuiz = quizData[currentQuizIndex];
+    
+    answerButtons.forEach(btn => btn.disabled = true);
+
+    if (selectedIndex === currentQuiz.correctAnswerIndex) {
+        score++;
+        feedbackElement.innerHTML = `<span style="color:var(--colore-successo)"><i class="fa-solid fa-check"></i> Esatto!</span>`;
+        answerButtons[selectedIndex].classList.add('correct');
+    } else {
+        feedbackElement.innerHTML = `<span style="color:#e74c3c"><i class="fa-solid fa-xmark"></i> Errato.</span> Era: <b>${currentQuiz.answers[currentQuiz.correctAnswerIndex]}</b>`;
+        answerButtons[selectedIndex].classList.add('incorrect');
+        answerButtons[currentQuiz.correctAnswerIndex].classList.add('correct'); 
+    }
+    
+    nextBtn.disabled = false;
+}
+
+// Event Listeners Quiz
+if (answersContainer) {
+    answersContainer.addEventListener('click', (event) => {
+        if (event.target.classList.contains('answer-btn')) {
+            const selectedIndex = parseInt(event.target.dataset.answerIndex);
+            checkAnswer(selectedIndex);
+        }
+    });
+}
+
+if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+        currentQuizIndex++;
+        loadQuiz();
+    });
+}
+
+// Avvio
+loadQuiz();
+console.log("Sistema Terre Rare caricato: Menu OK, Quiz OK, Effetti OK.");
