@@ -3,178 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gli Eroi Dimenticati: Le Terre Rare Pesanti</title>
+    <title>Terre Rare | Pro Design</title>
     
-    <link href="https://fonts.cdnfonts.com/css/product-sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
     <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
 
-    <div class="menu-overlay"></div>
-    <nav class="mobile-menu" id="mobileMenu" role="navigation" aria-hidden="true">
-        <div class="mobile-menu-header">
-            <h3>Menu</h3>
-            <button class="close-menu-btn" id="closeMenuBtn" aria-label="Chiudi menu">×</button>
-        </div>
-        <div class="mobile-menu-links">
-            <a href="index.html">Home</a>
-            <a href="index-elementi-non-trattati.html" class="active">Altri Elementi</a>
-            <a href="crediti.html">Crediti</a>
-            <a href="materiali.html">Materiali</a>
-        </div>
-    </nav>
+    <div class="liquid-background">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+    <div class="noise-overlay"></div>
     
-    <header data-aos="fade-down">
-        <div id="header-container">
-            <div class="header-title-section">
-                <a href="index.html"><img src="logo.png" class="header-logo" alt="Logo"></a>
-                <div class="header-text">
-                    <h2>Terre Rare</h2>
-                    <h4>Elementi & Applicazioni Speciali</h4>
-                </div>
+    <header id="main-header">
+        <div class="header-glass">
+            
+            <div class="logo-container">
+                <span class="logo-text">Rare<span style="font-weight:300">Earth</span></span>
             </div>
             
-            <nav id="sezioni-container">
-                <a href="index.html"><h5>Home</h5></a>
-                <a href="index-elementi-non-trattati.html" class="active"><h5>Altri Elementi</h5></a>
-                <a href="crediti.html"><h5>Crediti</h5></a>
-                <a href="materiali.html"><h5>Fonti</h5></a>
-            </nav>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <div class="right-nav-container">
+                
+                <nav id="hidden-nav" class="hidden-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="minalesi.html" class="nav-link special-link">Minalesi</a>
+                </nav>
+
+                <button class="menu-toggle-btn" id="menuToggleBtn">
+                    <div class="bar bar-1"></div>
+                    <div class="bar bar-2"></div>
+                    <div class="bar bar-3"></div>
+                </button>
+            </div>
+
         </div>
     </header>
     
     <main>
-        
-        <section id="intro" data-aos="zoom-in">
-            <h1>Gli Eroi Dimenticati: Le Terre Rare "Speciali" ✨</h1>
-            <p>Mentre tutti parlano di Neodimio, noi scopriamo i <strong>sette elementi rimanenti</strong>: gli eroi silenziosi che rendono possibile la medicina di precisione, i motori a reazione e il colore rosso dei nostri schermi.</p>
-            <a href="#dettagli" class="btn-primary">Scopri i Lantanoidi Speciali</a>
+        <section id="intro" data-aos="fade-up">
+            <span class="badge-pill">Progetto IIS Silvio Ceccato</span>
+            <h1>Gli Eroi Dimenticati<br><span class="gradient-text">Terre Rare Pesanti</span></h1>
+            <p>Un viaggio alla scoperta degli elementi che, pur lavorando nell'ombra, rendono possibile la nostra tecnologia quotidiana. Dal Prometio al Lutezio.</p>
+            
+            <div class="hero-buttons">
+                <a href="#dettagli" class="btn-apple primary">Scopri gli Elementi</a>
+                <a href="#interactive-section" class="btn-apple secondary">Mettiti alla Prova</a>
+            </div>
+        </section>
+
+        <section class="info-section glass-panel-large" data-aos="fade-up">
+            <div class="info-content">
+                <h2>Cosa sono i Lantanoidi?</h2>
+                <p>Spesso chiamati "Terre Rare", questi 15 elementi metallici argentei (numeri atomici 57-71) condividono proprietà chimiche straordinariamente simili. Non sono necessariamente "rari" in natura, ma è molto difficile trovarli in concentrazioni tali da renderne economica l'estrazione.</p>
+                <br>
+                <p><strong>Curiosità:</strong> Il tuo smartphone contiene almeno 8 diversi metalli delle terre rare. Senza di essi, non vibrerebbe, lo schermo non avrebbe colori brillanti e la batteria durerebbe la metà.</p>
+            </div>
         </section>
         
-        <hr>
-        
         <section id="dettagli">
-            <h2 class="section-title" data-aos="fade-up">I Sette Speciali: Proprietà e Usi</h2>
+            <h2 class="section-title" data-aos="fade-up">La Collezione Speciale</h2>
             
             <div id="element-cards">
                 
-                <div class="element-card" data-aos="fade-up" data-aos-delay="0">
-                    <div class="element-header">
-                        <h3>Prometio</h3>
-                        <div class="element-symbol">Pm</div>
+                <div class="element-card glass-panel" data-aos="fade-up">
+                    <div class="card-top">
+                        <div class="element-symbol radioactive">Pm</div>
+                        <div class="element-name">
+                            <h3>Prometio</h3>
+                            <span class="atomic-number">61</span>
+                        </div>
                     </div>
-                    <ul class="element-detail-list">
-                        <li><span class="detail-title"><i class="fa-solid fa-radiation"></i> Descrizione:</span> <span class="detail-text">Unico lantanide radioattivo e artificiale.</span></li>
-                        <li><span class="detail-title"><i class="fa-solid fa-bolt"></i> Usi Chiave:</span> <span class="detail-text">Micro-batterie nucleari per veicoli spaziali e pacemaker.</span></li>
-                        <li><span class="detail-title"><i class="fa-solid fa-lightbulb"></i> Curiosità:</span> <span class="detail-text">Prende il nome da Prometeo, che rubò il fuoco agli dei.</span></li>
-                    </ul>
+                    <div class="card-body">
+                        <div class="detail-row">
+                            <i class="fa-solid fa-atom"></i>
+                            <p>Unico lantanide radioattivo.</p>
+                        </div>
+                        <div class="detail-row highlight">
+                            <i class="fa-solid fa-bolt"></i>
+                            <p>Batterie atomiche a lunga durata.</p>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="element-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="element-header">
-                        <h3>Samario</h3>
+                <div class="element-card glass-panel" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-top">
                         <div class="element-symbol">Sm</div>
+                        <div class="element-name">
+                            <h3>Samario</h3>
+                            <span class="atomic-number">62</span>
+                        </div>
                     </div>
-                    <ul class="element-detail-list">
-                        <li><span class="detail-title"><i class="fa-solid fa-atom"></i> Descrizione:</span> <span class="detail-text">Resistente alla smagnetizzazione ad alte temperature.</span></li>
-                        <li><span class="detail-title"><i class="fa-solid fa-rocket"></i> Usi Chiave:</span> <span class="detail-text">Magneti per motori aerospaziali (Samario-Cobalto).</span></li>
-                        <li><span class="detail-title"><i class="fa-solid fa-fire"></i> Curiosità:</span> <span class="detail-text">I suoi magneti funzionano oltre i 300°C, battendo il Neodimio.</span></li>
-                    </ul>
+                    <div class="card-body">
+                        <div class="detail-row">
+                            <i class="fa-solid fa-magnet"></i>
+                            <p>Magneti permanenti Samario-Cobalto.</p>
+                        </div>
+                        <div class="detail-row highlight">
+                            <i class="fa-solid fa-guitar"></i>
+                            <p>Pickup per chitarre elettriche.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="element-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="element-header">
-                        <h3>Europio</h3>
+                <div class="element-card glass-panel" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-top">
                         <div class="element-symbol">Eu</div>
+                        <div class="element-name">
+                            <h3>Europio</h3>
+                            <span class="atomic-number">63</span>
+                        </div>
                     </div>
-                    <ul class="element-detail-list">
-                        <li><span class="detail-title"><i class="fa-solid fa-palette"></i> Descrizione:</span> <span class="detail-text">Il re della fluorescenza rossa.</span></li>
-                        <li><span class="detail-title"><i class="fa-solid fa-tv"></i> Usi Chiave:</span> <span class="detail-text">Schermi LED e luci anti-contraffazione (banconote).</span></li>
-                        <li><span class="detail-title"><i class="fa-solid fa-droplet"></i> Curiosità:</span> <span class="detail-text">Senza Europio non avremmo colori realistici in TV.</span></li>
-                    </ul>
+                    <div class="card-body">
+                        <div class="detail-row">
+                            <i class="fa-solid fa-tv"></i>
+                            <p>Fosfori rossi e blu per schermi.</p>
+                        </div>
+                        <div class="detail-row highlight">
+                            <i class="fa-solid fa-money-bill-wave"></i>
+                            <p>Sicurezza anti-contraffazione (Banconote Euro).</p>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="element-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="element-header">
-                        <h3>Gadolinio</h3>
+                <div class="element-card glass-panel" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-top">
                         <div class="element-symbol">Gd</div>
+                        <div class="element-name">
+                            <h3>Gadolinio</h3>
+                            <span class="atomic-number">64</span>
+                        </div>
                     </div>
-                    <ul class="element-detail-list">
-                        <li><span class="detail-title"><i class="fa-solid fa-stethoscope"></i> Descrizione:</span> <span class="detail-text">Fortemente magnetico a temperatura ambiente.</span></li>
-                        <li><span class="detail-title"><i class="fa-solid fa-brain"></i> Usi Chiave:</span> <span class="detail-text">Mezzo di contrasto vitale per la Risonanza Magnetica (RM).</span></li>
-                        <li><span class="detail-title"><i class="fa-solid fa-thermometer"></i> Curiosità:</span> <span class="detail-text">Usato per la refrigerazione magnetica (frigo del futuro).</span></li>
-                    </ul>
+                    <div class="card-body">
+                        <div class="detail-row">
+                            <i class="fa-solid fa-hospital"></i>
+                            <p>Agente di contrasto per Risonanza Magnetica.</p>
+                        </div>
+                        <div class="detail-row highlight">
+                            <i class="fa-solid fa-snowflake"></i>
+                            <p>Refrigerazione magnetica.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="element-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="element-header">
-                        <h3>Tulio</h3>
+                <div class="element-card glass-panel" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card-top">
                         <div class="element-symbol">Tm</div>
+                        <div class="element-name">
+                            <h3>Tulio</h3>
+                            <span class="atomic-number">69</span>
+                        </div>
                     </div>
-                    <ul class="element-detail-list">
-                        <li><span class="detail-title"><i class="fa-solid fa-microscope"></i> Descrizione:</span> <span class="detail-text">Uno dei più rari e costosi.</span></li>
-                        <li><span class="detail-title"><i class="fa-solid fa-scissors"></i> Usi Chiave:</span> <span class="detail-text">Laser chirurgici precisi (urologia, occhi).</span></li>
-                        <li><span class="detail-title"><i class="fa-solid fa-flag"></i> Curiosità:</span> <span class="detail-text">Nome derivato da "Thule", la mitica terra del Nord.</span></li>
-                    </ul>
+                    <div class="card-body">
+                        <div class="detail-row">
+                            <i class="fa-solid fa-gem"></i>
+                            <p>Uno dei più rari e costosi.</p>
+                        </div>
+                        <div class="detail-row highlight">
+                            <i class="fa-solid fa-user-doctor"></i>
+                            <p>Laser chirurgici di alta precisione.</p>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="element-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="element-header">
-                        <h3>Itterbio</h3>
+                <div class="element-card glass-panel" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card-top">
                         <div class="element-symbol">Yb</div>
+                        <div class="element-name">
+                            <h3>Itterbio</h3>
+                            <span class="atomic-number">70</span>
+                        </div>
                     </div>
-                    <ul class="element-detail-list">
-                        <li><span class="detail-title"><i class="fa-solid fa-signal"></i> Descrizione:</span> <span class="detail-text">Proprietà ottiche per amplificare segnali.</span></li>
-                        <li><span class="detail-title"><i class="fa-solid fa-satellite-dish"></i> Usi Chiave:</span> <span class="detail-text">Fibre ottiche per internet super-veloce e laser industriali.</span></li>
-                        <li><span class="detail-title"><i class="fa-solid fa-code"></i> Curiosità:</span> <span class="detail-text">Migliora la stabilità degli orologi atomici.</span></li>
-                    </ul>
+                    <div class="card-body">
+                        <div class="detail-row">
+                            <i class="fa-solid fa-clock"></i>
+                            <p>Orologi atomici ultra-precisi.</p>
+                        </div>
+                        <div class="detail-row highlight">
+                            <i class="fa-solid fa-wifi"></i>
+                            <p>Amplificatori per fibra ottica.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="element-card" data-aos="fade-up" data-aos-delay="600">
-                    <div class="element-header">
-                        <h3>Lutezio</h3>
+                <div class="element-card glass-panel" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card-top">
                         <div class="element-symbol">Lu</div>
+                        <div class="element-name">
+                            <h3>Lutezio</h3>
+                            <span class="atomic-number">71</span>
+                        </div>
                     </div>
-                    <ul class="element-detail-list">
-                        <li><span class="detail-title"><i class="fa-solid fa-weight-scale"></i> Descrizione:</span> <span class="detail-text">Il più denso e duro dei lantanidi.</span></li>
-                        <li><span class="detail-title"><i class="fa-solid fa-x-ray"></i> Usi Chiave:</span> <span class="detail-text">Rilevatori per la scansione PET (diagnostica tumori).</span></li>
-                        <li><span class="detail-title"><i class="fa-solid fa-city"></i> Curiosità:</span> <span class="detail-text">Il suo nome è l'antico nome latino di Parigi (Lutèce).</span></li>
-                    </ul>
+                    <div class="card-body">
+                        <div class="detail-row">
+                            <i class="fa-solid fa-weight-hanging"></i>
+                            <p>Il lantanide più duro e denso.</p>
+                        </div>
+                        <div class="detail-row highlight">
+                            <i class="fa-solid fa-oil-well"></i>
+                            <p>Catalizzatore raffinazione petrolio.</p>
+                        </div>
+                    </div>
                 </div>
                 
             </div>
         </section>
         
-        <hr>
-        
-        <section id="interactive-section" data-aos="flip-up">
-            <h2 class="section-title"><i class="fa-solid fa-gamepad"></i> Quiz: Mettiti alla Prova</h2>
-            <p style="color:var(--text-muted);">Abbina l'elemento al suo potere speciale!</p>
-
-            <div id="quiz-container">
-                <div id="question">Caricamento domanda...</div>
-                <div id="answers-container">
-                    <button class="answer-btn"></button>
-                    <button class="answer-btn"></button>
-                    <button class="answer-btn"></button>
+        <section id="interactive-section" data-aos="zoom-in-up">
+            <div class="quiz-glass-container">
+                <div class="quiz-header">
+                    <i class="fa-brands fa-apple"></i>
+                    <span>Quiz Time</span>
                 </div>
-                <div id="quiz-feedback"></div>
-                <button id="next-btn" disabled>Prossima Domanda</button>
+                <h2>Verifica le tue conoscenze</h2>
+                <div id="quiz-container">
+                    <div id="question">Caricamento...</div>
+                    <div id="answers-container"></div>
+                    <div id="quiz-feedback"></div>
+                    <button id="next-btn" class="btn-apple primary" style="width:100%; margin-top:20px;" disabled>Prosegui</button>
+                </div>
             </div>
         </section>
         
-        <hr>
-        
-        <section id="conclusion" style="max-width:800px; margin:0 auto; padding:20px; text-align:center;" data-aos="fade-up">
-            <h2 class="section-title"><i class="fa-solid fa-handshake"></i> Il Futuro è nelle Terre Rare</h2>
-            <p><strong>In sintesi:</strong> Le Terre Rare sono il carburante dell'alta tecnologia. Dall'<strong>Europio</strong> che colora il mondo, al <strong>Gadolinio</strong> che salva vite in ospedale.</p>
-            <p>La sfida del futuro non è solo usarle, ma riciclarle in modo sostenibile.</p>
+        <section id="conclusion" data-aos="fade-up">
+            <div class="conclusion-glass">
+                <h2>Il Paradosso Verde</h2>
+                <p>Questi elementi sono fondamentali per la transizione verde (auto elettriche, pale eoliche), ma la loro estrazione può essere molto inquinante. La sfida del futuro non è solo usarli, ma riciclarli in modo sostenibile.</p>
+            </div>
         </section>
         
     </main>
@@ -182,33 +240,23 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <div class="footer-logo">
-                    <img src="logo.png" alt="Logo" class="footer-logo-img">
-                    <h4>Terre Rare</h4>
-                </div>
+                <h4>Rare Earth Project</h4>
                 <p>Progetto scolastico sull'importanza strategica dei lantanoidi.</p>
             </div>
             <div class="footer-section">
                 <h4>Il Gruppo Completo</h4>
-                <div class="footer-elements">
-                    <span class="element-tag">Prometio</span>
-                    <span class="element-tag">Samario</span>
-                    <span class="element-tag">Europio</span>
-                    <span class="element-tag">Gadolinio</span>
-                    <span class="element-tag">Tulio</span>
-                    <span class="element-tag">Itterbio</span>
-                    <span class="element-tag">Lutezio</span>
+                <div class="footer-tags">
+                    <span>Pm</span> <span>Sm</span> <span>Eu</span> <span>Gd</span> <span>Tm</span> <span>Yb</span> <span>Lu</span>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 IIS Silvio Ceccato - Presentazione Chimica</p>
+            <p>&copy; 2025 IIS Silvio Ceccato. Designed with Morphing Glass.</p>
         </div>
     </footer>
     
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
-    
     <script src="script.js"></script>
 </body>
 </html>
